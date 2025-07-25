@@ -2,6 +2,10 @@
   publish = "dist"
   command = "npm run build"
 
+# Disable secrets scanning for Supabase public keys
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "VITE_SUPABASE_URL,VITE_SUPABASE_ANON_KEY"
+
 [[headers]]
   for = "/*"
   [headers.values]
